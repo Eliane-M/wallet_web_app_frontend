@@ -1,0 +1,300 @@
+/* Dashboard Layout */
+.dashboard-wrapper {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    padding-bottom: 2rem;
+}
+
+.dashboard-nav {
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-nav h1 {
+    color: #2d3748;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Balance Card Styles */
+.balance-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.balance-info h2 {
+    color: #4a5568;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin: 0 0 1.5rem 0;
+}
+
+.balance-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.action-button:hover {
+    transform: translateY(-1px);
+}
+
+.action-button.deposit {
+    background-color: #48bb78;
+    color: white;
+}
+
+.action-button.withdraw {
+    background-color: #f56565;
+    color: white;
+}
+
+/* Transaction Section */
+.transactions-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.transactions-section h2 {
+    color: #4a5568;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transaction-type {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
+
+.transaction-type.deposit {
+    background-color: #c6f6d5;
+    color: #22543d;
+}
+
+.transaction-type.withdraw {
+    background-color: #fed7d7;
+    color: #742a2a;
+}
+
+.transaction-date {
+    color: #718096;
+    font-size: 0.875rem;
+}
+
+.transaction-amount {
+    font-weight: 600;
+}
+
+.transaction-amount.deposit {
+    color: #48bb78;
+}
+
+.transaction-amount.withdraw {
+    color: #f56565;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.modal h2 {
+    margin: 0 0 1.5rem 0;
+    color: #2d3748;
+}
+
+.error-message {
+    background-color: #fff5f5;
+    color: #c53030;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66,153,225,0.1);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-button {
+    background-color: #edf2f7;
+    color: #4a5568;
+    border: none;
+}
+
+.cancel-button:hover {
+    background-color: #e2e8f0;
+}
+
+.modal-actions button:last-child {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+}
+
+.modal-actions button:last-child:hover {
+    background-color: #3182ce;
+}
+
+.modal-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .dashboard-nav {
+        padding: 1rem;
+    }
+    
+    .balance-card,
+    .transactions-section {
+        padding: 1.5rem;
+    }
+    
+    .balance-amount {
+        font-size: 2rem;
+    }
+    
+    .balance-actions {
+        flex-direction: column;
+    }
+    
+    .action-button {
+        width: 100%;
+    }
+    
+    .transaction-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Utility Classes */
+.logout-button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background-color: #edf2f7;
+    color: #4a5568;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #e2e8f0;
+}
+
+.no-transactions {
+    text-align: center;
+    color: #718096;
+    padding: 2rem;
+}
