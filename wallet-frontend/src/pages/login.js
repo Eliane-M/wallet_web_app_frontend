@@ -4,7 +4,7 @@ import { authService } from '../services/api';
 import '../assets/css/auth.css';
 
 function Login() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ function Login() {
     setLoading(true);
 
     try {
-        await authService.login(email, password);
+        await authService.login(username, password);
         navigate('/dashboard');
       } catch (error) {
         setError(error.response?.data?.error || 'Failed to login')
@@ -36,11 +36,11 @@ function Login() {
             
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Email</label>
+                    <label>Username</label>
                     <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         disabled={loading}
                     />
                 </div>

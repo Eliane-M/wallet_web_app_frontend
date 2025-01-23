@@ -59,8 +59,13 @@ export const authService = {
 export const walletService = {
     getBalance: async () => {
         try {
+            const token = localStorage.getItem('token');    
             console.log('Making balance request...');
-            const response = await api.get('/wallet/balance/');
+            const response = await api.get('/wallet/balance/', {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
             console.log('Balance response:', response);
             return response.data;
         } catch (error) {
@@ -76,18 +81,36 @@ export const walletService = {
     },
 
     deposit: async (amount) => {
-        const response = await api.post('/wallet/deposit/', { amount });
+        const response = await api.post('/wallet/deposit/', 
+            { amount },
+            {
+                headers: {
+                    Authorization: `access ${token}`,
+                },
+            }
+        );
         return response.data;
     },
 
     withdraw: async (amount) => {
-        const response = await api.post('/wallet/withdraw/', { amount });
+        const response = await api.post('/wallet/withdraw/', { amount },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
         return response.data;
     },
 
     getTransactions: async () => {
-        console.log('Reaching here')
-        const response = await api.get('/wallet/');
+        const response = await api.get('/wallet/',
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
         return response.data;
     }
 };
